@@ -1,0 +1,21 @@
+#include<stdio.h>
+void main()
+{
+    int a=1025;
+    int *p;
+    p=&a;
+    printf("size of integer is : %d bytes",sizeof(int));
+    printf("\nAddress : %d, Value : %d",p,*p);
+    printf("\nAddress : %d, Value : %d",p+1,*(p+1));
+    char *p0;
+    p0=(char *)p;
+    printf("\nsize of char is : %d bytes",sizeof(char));
+    printf("\nAddress : %d, Value : %d",p0,*p0);
+    printf("\nAddress : %d, Value : %d",p0+1,*(p0+1));
+    
+    //1025 = 00000000 00000000 00000100 00000001  this 100 00000001 lsb=1*2^10  msb=1*2^0
+    //        byte 3   byte 2   byte 1   byte 0
+    //every spce represents one byte
+    //pointer p0 points to byte 0 which is a binary value whose decimal value is 1
+    //pointer p0+1 points to byte 1 which is a binary value whose decimal value is 4
+}
